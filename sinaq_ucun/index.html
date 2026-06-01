@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMTAHAN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+
+<button class="theme-btn" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+
+<div id="settings" class="container">
+    <h1>Tehlukesiz Proqramlasdirma</h1>  <!--Fennin adi yazilir-->
+    <div class="star-count-wrapper">
+        <span id="starCountDisplay" class="star-badge">Ulduzlu suallar: 0</span>
+    </div>
+    <div class="setup-box">
+        <div class="input-group"><label>Başla (№)</label><input type="number" id="startRange" value="1"></div>
+        <div class="input-group"><label>Bitir (№)</label><input type="number" id="endRange" value="699"></div>
+        <div class="input-group"><label>Sual Sayı</label><input type="number" id="numQuestions" value="25"></div>
+        <div class="input-group">
+            <label>Sıralama</label>
+            <select id="orderType">
+                <option value="random">Qarışıq</option>
+                <option value="seq">Ardıcıl</option>
+            </select>
+        </div>
+        <div class="checkbox-card">
+            <label><input type="checkbox" id="autoCheck"> Variantı seçən kimi yoxla</label>
+        </div>
+    </div>
+    <button onclick="startTest(false)" class="btn-start">İmtahanı Başlat</button>
+    <button onclick="startTest(true)" id="starModeBtn" class="btn-start btn-star-mode" style="display:none;">🌟 Ulduzlu Sualları İşlə</button>
+</div>
+
+<div id="test" class="container" style="display:none;">
+    <div class="star-container">
+        <button id="currentStarBtn" class="star-btn" onclick="toggleStar()">★</button>
+    </div>
+    <div class="header-meta">
+        <span id="counterText"></span>
+        <span id="timerDisplay" class="timer-box">00:00</span>
+    </div>
+    <div class="progress-container"><div class="progress-bar" id="progressBar"></div></div>
+    <div id="questionContainer"></div>
+    <div class="footer-nav">
+        <button class="nav-btn" onclick="prevQuestion()" id="prevBtn">Geri</button>
+        <button class="nav-btn btn-view" onclick="forceShowAnswer()">Gör</button>
+        <button class="nav-btn" onclick="nextQuestion()" id="nextBtn">İrəli</button>
+        <button class="nav-btn btn-finish" onclick="finishTest()">Bitir</button>
+    </div>
+</div>
+
+<div id="results" class="container" style="display:none;">
+    <h1>İmtahan Nəticəsi</h1>
+    <div id="statsSummary"></div>
+    <div id="wrongQuestionsList" class="results-list"></div>
+    <button onclick="location.reload()" class="btn-start">Yenidən Başla</button>
+</div>
+
+<script src="questions.js"></script>  <!-- Suallarin daxil edildiyi fayl -->
+<script src="script.js"></script>
+</body>
+</html>
