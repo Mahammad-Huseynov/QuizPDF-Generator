@@ -16,7 +16,7 @@ Bu layihə PDF formatında olan sualları avtomatik oxuyub, onları strukturlaş
 
 1. **Layihəni klonlayın:**
 ```bash
-   git clone https://github.com/Mahammad-Huseynov/QuizPDF-Generator.git
+git clone https://github.com/Mahammad-Huseynov/QuizPDF-Generator.git
 ```
 2. **Python mühitinizdə lazım olan kitabxanaları quraşdırın:**
 ```bash
